@@ -9,3 +9,10 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'email', 'is_seller', 'password1', 'password2')
+# Importa tu modelo de Producto (ajusta el nombre si es 'Producto' o 'Product')
+from .models import User, Product 
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['name', 'description', 'price', 'image'] # Pon aquí los campos de tu modelo
